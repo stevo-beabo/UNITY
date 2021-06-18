@@ -1,8 +1,8 @@
-﻿<Properties StartupConfiguration="{64644A48-EB34-F8AD-8835-C46A8686EDC2}|">
+﻿<Properties>
   <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0d9a2e70-fc7a-4cbe-9b62-f1ec171aac6f" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="827df416-e9c4-40a8-935d-2d4b1722c2b2" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
