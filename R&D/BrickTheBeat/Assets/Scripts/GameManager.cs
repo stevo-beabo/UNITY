@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance { get; private set; }
 
-    public enum State {  MENU, INIT, PLAY, LEVELCOMPLETED, LOADLEVEL, GAMEOVER}
+    public enum State { MENU, INIT, PLAY, LEVELCOMPLETED, LOADLEVEL, GAMEOVER }
     State _state;
     GameObject _currentBall;
     GameObject _currentLevel;
@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour
                 Cursor.visible = false;
                 panelPlay.SetActive(true);
                 Score = 0;
-                Level = 0;
+                Level = 1;
                 Balls = 3;
                 if (_currentLevel != null)
                 {
@@ -159,7 +159,7 @@ public class GameManager : MonoBehaviour
                         SwitchState(State.GAMEOVER);
                     }
                 }
-                if (_currentLevel != null && _currentLevel.transform.childCount == 0 && !_isSwitchingState)
+                if (_currentLevel != null && _currentLevel.transform.childCount == 1 && !_isSwitchingState)
                 {
                     SwitchState(State.LEVELCOMPLETED);
                 }
