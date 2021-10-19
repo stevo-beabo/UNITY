@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject ballPrefab;
+    public GameObject notePrefab;
     public GameObject playerPrefab;
     public Text scoreText;
-    public Text ballsText;
+    public Text notesText;
     public Text levelText;
     public Text highscoreText;
 
@@ -19,12 +19,16 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] levels;
 
+    public static int instrumentHit = 0;
+
+    // Sets up the Instance static variable 
     public static GameManager Instance { get; private set; }
 
     public enum State { MENU, INIT, PLAY, LEVELCOMPLETED, LOADLEVEL, GAMEOVER }
     State _state;
-    GameObject _currentBall;
+    GameObject _currentNote;
     GameObject _currentLevel;
+
     bool _isSwitchingState;
 
     private int _score;
@@ -49,17 +53,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private int _balls;
+    private int _notes;
 
-    public int Balls
+    public int Notes
     {
-        get { return _balls; }
-        set { _balls = value;
-            ballsText.text = "Balls: " + _balls;
+        get { return _notes; }
+        set
+        {
+            _notes = value;
+            notesText.text = "Notes: " + _notes;
         }
     }
 
-    public void PlayClicked()
+public void PlayClicked()
     {
         SwitchState(State.INIT);
     }
@@ -100,8 +106,8 @@ public class GameManager : MonoBehaviour
                 Cursor.visible = false;
                 panelPlay.SetActive(true);
                 Score = 0;
-                Level = 1;
-                Balls = 3;
+                Level = 0;
+                Notes = 4;
                 if (_currentLevel != null)
                 {
                     Destroy(_currentLevel);
@@ -112,7 +118,7 @@ public class GameManager : MonoBehaviour
             case State.PLAY:
                 break;
             case State.LEVELCOMPLETED:
-                Destroy(_currentBall);
+                Destroy(_currentNote);
                 Destroy(_currentLevel);
                 Level++;
                 panelLevelCompleted.SetActive(true);
@@ -130,6 +136,7 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case State.GAMEOVER:
+                instrumentHit = 0;
                 if (Score > PlayerPrefs.GetInt("highscore"))
                 {
                     PlayerPrefs.SetInt("highscore", Score);
@@ -148,20 +155,33 @@ public class GameManager : MonoBehaviour
             case State.INIT:
                 break;
             case State.PLAY:
-                if (_currentBall == null)
+                if (_currentNote == null)
                 {
-                    if (Balls > 0)
+                    if (Notes > 0)
                     {
-                        _currentBall = Instantiate(ballPrefab);
+                        _currentNote = Instantiate(notePrefab);
                     }
                     else
                     {
                         SwitchState(State.GAMEOVER);
                     }
                 }
-                if (_currentLevel != null && _currentLevel.transform.childCount == 1 && !_isSwitchingState)
+                // Controls the success factors for completing levels per level
+                if (Level == 0)
                 {
-                    SwitchState(State.LEVELCOMPLETED);
+                    if (instrumentHit == 10 && !_isSwitchingState)
+                    {
+                        instrumentHit = 0;
+                        SwitchState(State.LEVELCOMPLETED);
+                    }
+                }
+                if (Level == 1)
+                {
+                    if (instrumentHit == 2 && !_isSwitchingState)
+                    {
+                        instrumentHit = 0;
+                        SwitchState(State.LEVELCOMPLETED);
+                    }
                 }
                 break;
             case State.LEVELCOMPLETED:

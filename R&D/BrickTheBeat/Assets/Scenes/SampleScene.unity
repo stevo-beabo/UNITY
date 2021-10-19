@@ -1391,7 +1391,7 @@ GameObject:
   - component: {fileID: 1402955397}
   - component: {fileID: 1402955396}
   m_Layer: 5
-  m_Name: TextBalls
+  m_Name: TextNotes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1449,7 +1449,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'BALLS: <BALLS>'
+  m_Text: 'Notes: <NOTES>'
 --- !u!222 &1402955397
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6551,10 +6551,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 475dc5bdb53e2499eaf74aabee18cf69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballPrefab: {fileID: 6609438904803877347, guid: 791e002d660e9430eab37c2e893fc359, type: 3}
+  notePrefab: {fileID: 6609438904803877347, guid: 791e002d660e9430eab37c2e893fc359, type: 3}
   playerPrefab: {fileID: 8956428876555514605, guid: bc772c81fc87144fc888907aa1e54593, type: 3}
   scoreText: {fileID: 1844503068}
-  ballsText: {fileID: 1402955396}
+  notesText: {fileID: 1402955396}
   levelText: {fileID: 833572142}
   highscoreText: {fileID: 389046831}
   panelMenu: {fileID: 1880572241}
@@ -6563,7 +6563,7 @@ MonoBehaviour:
   panelGameOver: {fileID: 585645326}
   levels:
   - {fileID: 3008102819785065329, guid: 65ccf185ff83d48d1aa2e44d294bf560, type: 3}
-  - {fileID: 3008102819785065329, guid: 7f50754baf6b848f4a2866d6d3abaad2, type: 3}
+  - {fileID: 3008102819785065329, guid: 440965801a0644e5da155e92c96cfb75, type: 3}
 --- !u!4 &1820993340
 Transform:
   m_ObjectHideFlags: 0
