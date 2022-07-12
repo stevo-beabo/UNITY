@@ -1,29 +1,29 @@
 ﻿<Properties StartupConfiguration="{EE2B9910-EBB5-7640-4724-56F58E42C37B}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameManager.cs" Line="172" Column="44" />
-      <File FileName="Assets/Scripts/ObjectScripts/Note.cs" />
-      <File FileName="Assets/Scripts/ObjectScripts/Instruments.cs" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="181" Column="22" />
+      <File FileName="Assets/Scripts/ObjectScripts/Note.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ObjectScripts/Instruments.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/AudioScripts/L1_BassDrum.cs" />
       <File FileName="Assets/Scripts/AudioScripts/L1_SnareDrum.cs" />
       <File FileName="Assets/Scripts/AudioScripts/L1_BassGuitar.cs" />
-      <File FileName="Assets/Scripts/AudioScripts/L1_AcousticGuitar.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/AudioScripts/L1_AcousticGuitar.cs" />
       <File FileName="Assets/Scripts/AudioScripts/L1_CymbalAccent.cs" />
       <File FileName="Assets/Scripts/AudioScripts/L1_Keyboard.cs" />
       <File FileName="Assets/Scripts/AudioScripts/L1_Triangle.cs" />
       <File FileName="Assets/Scripts/AudioScripts/L1_Maracas.cs" />
       <File FileName="Assets/Scripts/AudioScripts/L1_Bongos.cs" />
-      <File FileName="Library/PackageCache/com.unity.ide.visualstudio@2.0.11/Editor/VisualStudioIntegration.cs" Line="149" Column="1" />
+      <File FileName="Assets/Scripts/ObjectScripts/Player.cs" Line="16" Column="116" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="BrickTheBeat" expanded="True">
             <Node name="Assets" expanded="True">
+              <Node name="Audio" selected="True" />
               <Node name="Scripts" expanded="True">
                 <Node name="AudioScripts" expanded="True" />
                 <Node name="ObjectScripts" expanded="True" />
-                <Node name="GameManager.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -33,7 +33,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b7c41ce2-2ebd-4592-bf21-cdb5cd5d87a6" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a0ce6062-b44a-4790-96d0-5384ca4a0630" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

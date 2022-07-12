@@ -118,10 +118,10 @@ public void PlayClicked()
             case State.PLAY:
                 break;
             case State.LEVELCOMPLETED:
-                Destroy(_currentNote);
+                panelLevelCompleted.SetActive(false);
                 Destroy(_currentLevel);
+                instrumentHit = 0;
                 Level++;
-                panelLevelCompleted.SetActive(true);
                 SwitchState(State.LOADLEVEL, 2f);
                 break;
             case State.LOADLEVEL:
@@ -171,16 +171,27 @@ public void PlayClicked()
                 {
                     if (instrumentHit == 10 && !_isSwitchingState)
                     {
-                        instrumentHit = 0;
-                        SwitchState(State.LEVELCOMPLETED);
+                        Cursor.visible = true;
+                        panelLevelCompleted.SetActive(true);
+                        if (Input.anyKeyDown)
+                        {
+                            SwitchState(State.LEVELCOMPLETED);
+                        }
+                        break;
                     }
                 }
                 if (Level == 1)
                 {
                     if (instrumentHit == 2 && !_isSwitchingState)
                     {
-                        instrumentHit = 0;
+                        Cursor.visible = true;
+                    Destroy(_currentNote);
+                    //panelLevelCompleted.SetActive(true);
+                    if (Input.anyKeyDown)
+                    {
                         SwitchState(State.LEVELCOMPLETED);
+                    }
+                    break;
                     }
                 }
                 break;
